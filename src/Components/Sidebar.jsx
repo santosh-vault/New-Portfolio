@@ -1,9 +1,32 @@
 // Sidebar.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ socialLinks, isOpen, toggleSidebar }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <aside className={`text-white fixed h-full w-1/5 p-6 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} transition-transform duration-300 ease-in-out`} style={{ backgroundColor: "#0b0b0b" }}>
+    <aside className={`text-white fixed h-full w-5/5 mt-10 p-6 ${(!isMobile || isOpen) ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} transition-transform duration-300 ease-in-out`} style={{ backgroundColor: "#0b0b0b" }}>
+      {isMobile && !isOpen && (
+        <button
+          className="md:hidden fixed top-4 left-4 z-50 p-2"
+          onClick={toggleSidebar}
+        >
+          Open Menu
+        </button>
+      )}
       <div className="text-center">
         <div className="mb-4">
           <span className='bg-purple-500 h-3 w-3 inline-block mr-2'></span>

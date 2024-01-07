@@ -13,24 +13,24 @@ const Navbar = () => {
   return (
     <animated.nav
       style={{ ...fadeIn, boxShadow: '0 0 10px rgba(128, 0, 128, 0.8)' }}
-      className="bg-purple-800 fixed mt-8 ml-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center w-1/4 p-1 overflow-hidden rounded-sm" // Adjust the width as needed
+      className="bg-purple-800 fixed top-2 left-0 w-full p-1 md:mt-10 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:w-10/12 lg:w-1/4 p-1 overflow-hidden rounded-sm" 
     >
-      <div className="flex justify-center items-center">
-        <div className="text-white text-xl font-light mr-3">.santosh</div>
-        <ul className="flex items-center space-x-4">
-        <span className="bg-gray-100 opacity-0.5 h-4 w-0.5 mr-2"></span>
+      <div className="flex items-center justify-between px-2">
+        <div className="text-white text-xl font-light mb-1">.santosh</div>
+        <ul className="flex space-x-4 md:space-x-4">
+
           <li>
-            <a href="#" className="text-white font-light hover:text-gray-300 text-2sm">
+            <a href="#" className="text-white font-light hover:text-gray-300 text-xs">
               About
             </a>
           </li>
           <li>
-            <a href="#" className="text-white font-light hover:text-gray-300 text-2sm">
+            <a href="#" className="text-white font-light hover:text-gray-300 text-xs">
               Projects
             </a>
           </li>
           <li>
-            <a href="#" className="text-white font-light hover:text-gray-300 text-2sm">
+            <a href="#" className="text-white font-light hover:text-gray-300 text-xs">
               Contact
             </a>
           </li>
