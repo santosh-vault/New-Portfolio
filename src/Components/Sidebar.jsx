@@ -9,7 +9,7 @@ const Sidebar = ({ socialLinks, isOpen, toggleSidebar }) => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {

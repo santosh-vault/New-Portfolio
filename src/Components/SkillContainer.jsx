@@ -1,17 +1,20 @@
 // SkillContainer.js
 import React from 'react';
 import SkillCard from './SkillCard';
+import { FaHtml5, FaCss3, FaReact, FaLaravel, FaPhp } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiTailwindcss, SiAdobephotoshop } from "react-icons/si";
 
 const initialSkills = [
-  { title: 'HTML', icon: '🌐' },
-  { title: 'CSS', icon: '🎨' },
-  { title: 'JavaScript', icon: '🚀' },
-  { title: 'React', icon: '🚀' },
-  { title: 'Laravel', icon: '🚀' },
-  { title: 'tailwind', icon: '🚀' },
+  { title: 'HTML', icon: <FaHtml5 /> },
+  { title: 'CSS', icon: <FaCss3 /> },
+  { title: 'JavaScript', icon: <IoLogoJavascript /> },
+  { title: 'React', icon: <FaReact /> },
+  { title: 'Laravel', icon: <FaLaravel /> },
+  { title: 'tailwind', icon: <SiTailwindcss /> },
   { title: 'Bootstrap', icon: '🚀' },
-  { title: 'graphics Design', icon: '🚀' },
-  { title: 'PHP', icon: '🚀' },
+  { title: 'graphics Design', icon: <SiAdobephotoshop /> },
+  { title: 'PHP', icon: <FaPhp /> },
 ];
 
 const SkillContainer = ({ skills }) => {
