@@ -1,10 +1,12 @@
-// HeroSection.js
+
 import React from 'react';
 import Navbar from './Navbar';
 import ProjectContainer from './ProjectContainer';
 import Footer from './Footer';
 import SkillContainer from './SkillContainer';
 import heroImage from '../assets/hero.jpg';
+import About from './About';
+import Hire from './Hire';
 
 
 const Hero = () => {
@@ -26,6 +28,7 @@ const Hero = () => {
         <div className="p-4 md:p-8">
           <ProjectContainer />
           <SkillContainer />
+          <Hire />
           <Footer />
         </div>
       </div>

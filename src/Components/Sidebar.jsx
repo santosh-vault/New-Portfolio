@@ -1,4 +1,3 @@
-// Sidebar.js
 import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ socialLinks, isOpen, toggleSidebar }) => {
@@ -18,7 +17,7 @@ const Sidebar = ({ socialLinks, isOpen, toggleSidebar }) => {
   }, []);
 
   return (
-    <aside className={`text-white fixed h-full w-5/5 mt-10 p-6 ${(!isMobile || isOpen) ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} transition-transform duration-300 ease-in-out`} style={{ backgroundColor: "#0b0b0b" }}>
+    <aside className={`text-white fixed h-full w-5/5 mt-10 p-6 z-1 ${(!isMobile || isOpen) ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} transition-transform duration-300 ease-in-out`} style={{ backgroundColor: "#0b0b0b", zIndex: 1 }}>
       {isMobile && !isOpen && (
         <button
           className="md:hidden fixed top-4 left-4 z-50 p-2"

@@ -7,7 +7,7 @@ const ProjectCard = ({ title, description, link, image }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-green-900 text-sm transform-gpu transition-transform duration-300 hover:scale-105"
+      className="text-green-900 z-0  text-sm transform-gpu transition-transform duration-300 hover:scale-105"
     >
       <div className="bg-gray-200 rounded-md shadow-md mx-4 transform-gpu transition-transform duration-300 hover:scale-100">
         <img
