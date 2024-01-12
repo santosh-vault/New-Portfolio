@@ -10,11 +10,11 @@ const initialSkills = [
   { title: 'CSS', icon: <FaCss3 /> },
   { title: 'JavaScript', icon: <IoLogoJavascript /> },
   { title: 'React', icon: <FaReact /> },
-  { title: 'Laravel', icon: <FaLaravel /> },
+
   { title: 'tailwind', icon: <SiTailwindcss /> },
   { title: 'Bootstrap', icon: '🚀' },
-  { title: 'graphics Design', icon: <SiAdobephotoshop /> },
-  { title: 'PHP', icon: <FaPhp /> },
+
+
 ];
 
 const SkillContainer = ({ skills }) => {

@@ -40,7 +40,7 @@ const Sidebar = ({ socialLinks, isOpen, toggleSidebar }) => {
             <a key={index} href={socialLink.link} target="_blank" rel="noopener noreferrer">
               <div className="flex items-center bg-purple-900 rounded p-3 transition-all duration-300 hover:bg-purple-700" style={{ boxShadow: '0 0 10px rgba(128, 0, 128, 0.8)' }}>
                 <span className="bg-gray-100 h-5 w-1 mr-2"></span>
-                <span>{socialLink.a}</span>
+                <span className='_blank'>{socialLink.a}</span>
               </div>
             </a>
           ))}
