@@ -1,6 +1,6 @@
 // ProjectContainer.js
 import React from 'react';
-import ProjectCard from './Projectcard';
+import ProjectCard from './ProjectCard'
 import Bca from '../assets/Bca.jpg'
 import kinchha from '../assets/kinchha.jpg'
 import santo from '../assets/santo.jpg'
@@ -23,7 +23,7 @@ const ProjectContainer = () => {
       title: 'Portfolio',
       description: 'Digital presence with my React-powered personal portfolio, a showcase of creativity and skills tailored for a standout online identity.',
       link: 'https://github.com/Santosh079/Portfolio',
-      image: santo, // Adjust the path to your image
+      image: santo, 
     },
 
 
