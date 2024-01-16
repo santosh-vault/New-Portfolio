@@ -11,7 +11,7 @@ const socialLinks = [
   { link: 'https://twitter.com/subediwrites', a: 'Twitter' },
   { link: 'https://www.instagram.com/santoshsub_75/', a: 'Instagram' },
   { link: 'https://www.linkedin.com/in/santoshsubedi75/', a: 'LinkedIn' },
-  { link: 'https://subedihub.netlify.app/', a: 'portfolio' },
+  { link: 'https://subedihub.netlify.app/', a: 'Portfolio' },
 
 ];
 

@@ -6,13 +6,13 @@ import { IoLogoJavascript } from "react-icons/io";
 import { SiTailwindcss, SiAdobephotoshop } from "react-icons/si";
 
 const initialSkills = [
-  { title: 'HTML', icon: <FaHtml5 /> },
-  { title: 'CSS', icon: <FaCss3 /> },
-  { title: 'JavaScript', icon: <IoLogoJavascript /> },
+  
   { title: 'React', icon: <FaReact /> },
-
+  { title: 'JavaScript', icon: <IoLogoJavascript /> },
   { title: 'tailwind', icon: <SiTailwindcss /> },
   { title: 'Bootstrap', icon: '🚀' },
+  { title: 'HTML', icon: <FaHtml5 /> },
+  { title: 'CSS', icon: <FaCss3 /> },
 
 
 ];
