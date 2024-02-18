@@ -1,22 +1,20 @@
 // App.js
-import React, { useState, useEffect } from 'react';
-import Sidebar from './Components/Sidebar';
-import Hero from './Components/Hero';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Sidebar from "./Components/Sidebar";
+import Hero from "./Components/Hero";
+import "./App.css";
 import { CiMenuBurger } from "react-icons/ci";
 
 const socialLinks = [
-  
-  { link: 'https://github.com/santosh-vault', a: 'GitHub' },
-  { link: 'https://twitter.com/subediwrites', a: 'Twitter' },
-  { link: 'https://www.instagram.com/santoshsub_75/', a: 'Instagram' },
-  { link: 'https://www.linkedin.com/in/santoshsubedi75/', a: 'LinkedIn' },
-  { link: 'https://subedihub.netlify.app/', a: 'Portfolio' },
-
+  { link: "https://github.com/santosh-vault", a: "GitHub" },
+  { link: "https://twitter.com/subediwrites", a: "Twitter" },
+  { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
+  { link: "https://www.linkedin.com/in/santoshsubedi75/", a: "LinkedIn" },
+  { link: "https://subedihub.netlify.app/", a: "Portfolio" },
 ];
 
 const App = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false); 
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,11 +22,11 @@ const App = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -38,12 +36,21 @@ const App = () => {
 
   return (
     <div className="relative flex">
-      <div className={`fixed inset-0 bg-black opacity-10 ${isSidebarOpen || !isMobile ? 'block' : 'hidden'}`} onClick={() => setSidebarOpen(false)}></div>
-      <Sidebar socialLinks={socialLinks} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div
+        className={`fixed inset-0 bg-black opacity-10 ${
+          isSidebarOpen || !isMobile ? "block" : "hidden"
+        }`}
+        onClick={() => setSidebarOpen(false)}
+      ></div>
+      <Sidebar
+        socialLinks={socialLinks}
+        isOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+      />
       <div className="flex-1">
         {isMobile && (
           <button
-            className="md:hidden text-white fixed top-14 left-4 z-50 p-2"
+            className="md:hidden text-white fixed top-14 right-4 z-50 p-2"
             onClick={toggleSidebar}
           >
             <CiMenuBurger />
