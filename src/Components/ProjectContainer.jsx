@@ -5,20 +5,32 @@ import Bca from "../assets/Bca.jpg";
 import kinchha from "../assets/kinchha.jpg";
 import santo from "../assets/santo.jpg";
 import valentine from "../assets/valentine.png";
+import techminds from "../assets/techminds.png";
+import gd from "../assets/gd.png";
+import bg from "../assets/bg.png";
+import movie from "../assets/movie.png";
 
 const ProjectContainer = () => {
   const projects = [
     {
+      title: "Greenify",
+      description:
+        "A MERN stack project which is going to take donation form people and invest all the donation in tree plantation project.",
+      link: "https://github.com/santosh-vault/greenify",
+      image: bg,
+    },
+    {
       title: "BCA Notes Website",
       description:
-        "BCA Notes for BCA students in Nepal, ensuring top-quality study materials and academic resources for success in the BCA program.",
+        "Completly React + tailwind website but called API to store some BCA Notes for BCA students in Nepal, ensuring top-quality study materials and academic resources for success in the BCA program.",
       link: "https://bcanotesnepal.netlify.app/",
       image: Bca,
     },
+
     {
       title: "E-Commerce webiste",
       description:
-        "Online shopping experience with our E-commerce Project, seamlessly integrating APIs for a swift and dynamic shopping environment",
+        "Called DUMMY API to create a store for Online shopping experience with our E-commerce Project, seamlessly integrating APIs for a swift and dynamic shopping environment",
       link: "https://kinchha.netlify.app/",
       image: kinchha,
     },
@@ -30,11 +42,25 @@ const ProjectContainer = () => {
       image: valentine,
     },
     {
-      title: "Portfolio",
+      title: "TechMinds Website",
       description:
-        "Digital presence with my React-powered personal portfolio, a showcase of creativity and skills tailored for a standout online identity.",
-      link: "https://github.com/Santosh079/Portfolio",
-      image: santo,
+        "Techmind is a website developed using REACT with the primary goal of enhancing my technical skills and expanding my knowledge in web development.",
+      link: "https://techmindsclone.netlify.app/",
+      image: techminds,
+    },
+    {
+      title: "Design Portfolio",
+      description:
+        "A creative portfolio showcasing diverse graphic design projects, blending aesthetics with functionality to deliver impactful visual experiences.",
+      link: "https://santoshnart.netlify.app/",
+      image: gd,
+    },
+    {
+      title: "Ticket Website",
+      description:
+        "Created Using Php for the backend and html cass for the frontend, a beautiful Demo website for booking tickets",
+      link: "https://github.com/santosh-vault/Movie-ticket",
+      image: movie,
     },
   ];
 
