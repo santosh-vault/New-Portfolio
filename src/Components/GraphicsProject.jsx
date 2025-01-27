@@ -2,14 +2,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
-import crm from "../assets/crm.png";
-import intern from "../assets/intern.png";
+import DIGI from "../assets/DIGI.png";
+import Bca from "../assets/Bca.jpg";
 import aayishi from "../assets/aayishi.png";
-import valentine from "../assets/valentine.png";
-import techminds from "../assets/techminds.png";
-
-import bgg from "../assets/bgg.png";
-import movie from "../assets/movie.png";
+import gangstar from "../assets/gangstar.png";
+import logoc from "../assets/logoc.png";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
@@ -54,34 +51,34 @@ const Modal = ({ project, onClose }) => {
   );
 };
 
-const ProjectContainer = () => {
+const GraphicsProject = () => {
   const projects = [
     {
-      title: "CRM",
+      title: "Logos",
       description:
-        "A robust CRM solution developed for educational consultancies, streamlining client management and enhancing communication for better service delivery.",
-      image: crm,
-      modalImage: "src/assets/Dashboard.png",
+        "I have designed impactful logos for companies like Shabda Sanchar, Everest Flying Academy, Lamichhane Automobiles, and Greenify, reflecting their unique identities and values. Each design combines creativity and precision to deliver a lasting impression.",
+      image: logoc,
+      modalImage: "src/assets/LOGOS.png",
     },
     {
-      title: "Kathmandu Fintek",
+      title: "Socail Media posts",
       description:
-        "A comprehensive fintech event management platform designed for Kathmandu FinTech, streamlining the organization and execution of industry events.",
-      image: bgg,
-      modalImage: "src/assets/fintek.png",
+        "Turning visions into creative realities! ✨ With a passion for design, I craft unique and impactful logos that capture the essence of every brand. From modern and minimalistic to bold and dynamic, each logo tells a story and creates a lasting impression. Let's bring your brand to life! ",
+      image: DIGI,
+      modalImage: "src/assets/socail.png",
     },
     {
-      title: "Internship ICT FRAME",
+      title: "Illustrations / Posters",
       description:
-        "A user-friendly internship portal developed for ICT Frame, connecting students with internship opportunities in the tech industry.",
-      image: intern,
-      modalImage: "src/assets/fintek.png",
+        "Bringing ideas to life through vibrant and meaningful illustrations! 🎨 Each piece is crafted with creativity and attention to detail, telling stories that captivate and inspire. From concept to completion, my illustrations are designed to leave a lasting impression. ✨ #IllustrationArt #CreativeDesigns #VisualStorytelling",
+      image: gangstar,
+      modalImage: "src/assets/poster.png",
     },
     {
-      title: "Nepal Diaries",
+      title: "Web Development",
       description:
-        "A visually appealing website created for Nepal Dairies to showcase their product models, enhancing their online presence and customer engagement.",
-      image: aayishi,
+        "Apart from designs, I also dive into coding projects like building Valentine-themed projects, tree plantation initiatives, and more! 💻🌱 Bringing both creativity and functionality together in every project. ",
+      image: Bca,
       modalImage: "src/asset/saayishi.png",
     },
   ];
@@ -104,7 +101,7 @@ const ProjectContainer = () => {
             className="bg-purple-500 h-3 w-3 inline-block mr-2 rounded-full"
             style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
           ></span>
-          UI/UX Projects
+          Graphics Design Projects
         </h2>
       </div>
 
@@ -126,4 +123,4 @@ const ProjectContainer = () => {
   );
 };
 
-export default ProjectContainer;
+export default GraphicsProject;

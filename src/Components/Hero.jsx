@@ -6,6 +6,7 @@ import SkillContainer from "./SkillContainer";
 import heroImage from "../assets/hero.jpg";
 import About from "./About";
 import Hire from "./Hire";
+import GraphicsProject from "./GraphicsProject";
 
 const Hero = () => {
   return (
@@ -28,6 +29,7 @@ const Hero = () => {
         </div>
         <div className="p-4 md:p-8">
           <ProjectContainer />
+          <GraphicsProject />
           <SkillContainer />
           <Hire />
           <Footer />
