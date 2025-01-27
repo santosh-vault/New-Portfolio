@@ -6,10 +6,10 @@ import "./App.css";
 import { CiMenuBurger } from "react-icons/ci";
 
 const socialLinks = [
-  { link: "https://github.com/santosh-vault", a: "GitHub" },
+  { link: "https://www.linkedin.com/in/santoshsubedi75/", a: "LinkedIn" },
+  { link: "https://github.com/santosh-vault", a: "Behance" },
   { link: "https://twitter.com/subediwrites", a: "Twitter" },
   { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
-  { link: "https://www.linkedin.com/in/santoshsubedi75/", a: "LinkedIn" },
   { link: "https://subedihub.netlify.app/", a: "Portfolio" },
 ];
 
