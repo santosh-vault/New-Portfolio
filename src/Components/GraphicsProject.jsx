@@ -7,6 +7,7 @@ import Bca from "../assets/Bca.jpg";
 import aayishi from "../assets/aayishi.png";
 import gangstar from "../assets/gangstar.png";
 import logoc from "../assets/logoc.png";
+import logoc1 from "../assets/LOGOS.png";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
@@ -58,7 +59,7 @@ const GraphicsProject = () => {
       description:
         "I have designed impactful logos for companies like Shabda Sanchar, Everest Flying Academy, Lamichhane Automobiles, and Greenify, reflecting their unique identities and values. Each design combines creativity and precision to deliver a lasting impression.",
       image: logoc,
-      modalImage: "src/assets/LOGOS.png",
+      modalImage: logoc1,
     },
     {
       title: "Socail Media posts",
