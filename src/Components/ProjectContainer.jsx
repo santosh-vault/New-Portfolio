@@ -8,7 +8,7 @@ import aayishi from "../assets/aayishi.png";
 import Dashboard from "../assets/Dashboard.png";
 import fintek from "../assets/fintek.png";
 import bgg from "../assets/bgg.png";
-import JOB from "../assets/JOB.png";
+import job from "../assets/job.png";
 import ho from "../assets/ho.png";
 
 const Modal = ({ project, onClose }) => {
@@ -80,7 +80,7 @@ const ProjectContainer = () => {
       description:
         "A user-friendly internship portal developed for ICT Frame, connecting students with internship opportunities in the tech industry.",
       image: intern,
-      modalImage: JOB,
+      modalImage: job,
       link: "https://internship.ictframe.com/",
     },
     {
