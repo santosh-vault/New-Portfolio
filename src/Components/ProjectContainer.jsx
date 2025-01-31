@@ -5,33 +5,37 @@ import ProjectCard from "./ProjectCard";
 import crm from "../assets/crm.png";
 import intern from "../assets/intern.png";
 import aayishi from "../assets/aayishi.png";
-import valentine from "../assets/valentine.png";
-import techminds from "../assets/techminds.png";
-
+import Dashboard from "../assets/Dashboard.png";
+import fintek from "../assets/fintek.png";
 import bgg from "../assets/bgg.png";
-import movie from "../assets/movie.png";
+import JOB from "../assets/JOB.png";
+import ho from "../assets/ho.png";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
 
   useEffect(() => {
-    // Lock the background scroll when the modal is open
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "auto"; // Restore scrolling when modal closes
+      document.body.style.overflow = "auto";
     };
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-auto">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-auto"
+        onClick={(e) => e.stopPropagation()} // Prevent background click closing the modal
+      >
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
           onClick={onClose}
         >
           &#10005;
         </button>
-        {/* Use modalImage if available; otherwise, fallback to image */}
         <div className="overflow-auto mb-4 rounded-md">
           <img
             src={project.modalImage || project.image}
@@ -46,6 +50,7 @@ const Modal = ({ project, onClose }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="text-purple-600 hover:underline cursor-pointer"
+          onClick={(e) => e.stopPropagation()}
         >
           Visit
         </a>
@@ -53,7 +58,6 @@ const Modal = ({ project, onClose }) => {
     </div>
   );
 };
-
 const ProjectContainer = () => {
   const projects = [
     {
@@ -61,28 +65,30 @@ const ProjectContainer = () => {
       description:
         "A robust CRM solution developed for educational consultancies, streamlining client management and enhancing communication for better service delivery.",
       image: crm,
-      modalImage: "src/assets/Dashboard.png",
+      modalImage: Dashboard,
     },
     {
       title: "Kathmandu Fintek",
       description:
         "A comprehensive fintech event management platform designed for Kathmandu FinTech, streamlining the organization and execution of industry events.",
       image: bgg,
-      modalImage: "src/assets/fintek.png",
+      modalImage: fintek,
+      link: "https://www.kathmandufintek.com.np",
     },
     {
       title: "Internship ICT FRAME",
       description:
         "A user-friendly internship portal developed for ICT Frame, connecting students with internship opportunities in the tech industry.",
       image: intern,
-      modalImage: "src/assets/fintek.png",
+      modalImage: JOB,
+      link: "https://internship.ictframe.com/",
     },
     {
       title: "Nepal Diaries",
       description:
         "A visually appealing website created for Nepal Dairies to showcase their product models, enhancing their online presence and customer engagement.",
       image: aayishi,
-      modalImage: "src/asset/saayishi.png",
+      modalImage: ho,
     },
   ];
 
@@ -101,7 +107,7 @@ const ProjectContainer = () => {
       <div className="flex items-center justify-between mx-3 mb-4">
         <h2 className="text-lg text-white font-bold flex items-center">
           <span
-            className="bg-purple-500 h-3 w-3 inline-block mr-2 rounded-full"
+            className="bg-purple-500 h-3 w-3 inline-block mr-2 "
             style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
           ></span>
           UI/UX Projects
