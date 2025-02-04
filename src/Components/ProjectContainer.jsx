@@ -63,14 +63,14 @@ const ProjectContainer = () => {
     {
       title: "CRM",
       description:
-        "A robust CRM solution developed for educational consultancies, streamlining client management and enhancing communication for better service delivery.",
+        " As a UI/UX designer at W3 Developers, I contributed to developing a CRM solution tailored for educational consultancies. My responsibilities included designing user-friendly interfaces, creating dashboards for performance tracking, and ensuring an intuitive user experience aligned with client requirements.",
       image: crm,
       modalImage: Dashboard,
     },
     {
       title: "Kathmandu Fintek",
       description:
-        "A comprehensive fintech event management platform designed for Kathmandu FinTech, streamlining the organization and execution of industry events.",
+        "I developed a comprehensive fintech event management platform for Kathmandu FinTech, focusing on enhancing the organization and execution of industry events. My role involved conducting user research, wireframing, and designing interactive dashboards to streamline event processes and improve user engagement. This project was completed as part of my role at W3 Developers.",
       image: bgg,
       modalImage: fintek,
       link: "https://www.kathmandufintek.com.np",
@@ -78,7 +78,7 @@ const ProjectContainer = () => {
     {
       title: "Internship ICT FRAME",
       description:
-        "A user-friendly internship portal developed for ICT Frame, connecting students with internship opportunities in the tech industry.",
+        "I designed a user-friendly internship portal for ICT Frame, aimed at connecting students with valuable internship opportunities in the tech industry. My responsibilities included creating an intuitive user interface and optimizing user journeys for a seamless experience. This project was accomplished during my tenure at W3 Developers.",
       image: intern,
       modalImage: job,
       link: "https://internship.ictframe.com/",
@@ -86,7 +86,7 @@ const ProjectContainer = () => {
     {
       title: "Nepal Diaries",
       description:
-        "A visually appealing website created for Nepal Dairies to showcase their product models, enhancing their online presence and customer engagement.",
+        "I developed a visually appealing website for Nepal Dairies to effectively showcase their product models, enhancing their online presence and fostering better customer engagement. This project was successfully accomplished during my role at W3 Developers.",
       image: aayishi,
       modalImage: ho,
     },
