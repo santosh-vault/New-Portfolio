@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import ProjectContainer from "./ProjectContainer";
 import Footer from "./Footer";
 import SkillContainer from "./SkillContainer";
-import heroImage from "../assets/hero.jpg";
+import heroImage from "../assets/hero.png";
 import About from "./About";
 import Hire from "./Hire";
 import GraphicsProject from "./GraphicsProject";
