@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
-import crm from "../assets/crm.png";
+import crma from "../assets/crma.png";
 import intern from "../assets/intern.png";
-import aayishi from "../assets/aayishi.png";
 import Dashboard from "../assets/Dashboard.png";
 import fintek from "../assets/fintek.png";
 import bgg from "../assets/bgg.png";
 import job from "../assets/job.png";
 import ho from "../assets/ho.png";
+import meroshare from "../assets/meroshare.png";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
@@ -49,10 +49,10 @@ const Modal = ({ project, onClose }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-purple-600 hover:underline cursor-pointer"
+          className="inline-block px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out"
           onClick={(e) => e.stopPropagation()}
         >
-          Visit
+          Visit Project
         </a>
       </div>
     </div>
@@ -64,8 +64,9 @@ const ProjectContainer = () => {
       title: "CRM",
       description:
         " As a UI/UX designer at W3 Developers, I contributed to developing a CRM solution tailored for educational consultancies. My responsibilities included designing user-friendly interfaces, creating dashboards for performance tracking, and ensuring an intuitive user experience aligned with client requirements.",
-      image: crm,
+      image: crma,
       modalImage: Dashboard,
+      link: "https://www.behance.net/gallery/223908225/CRM-Dashboard-for-Education-Consultancy",
     },
     {
       title: "Kathmandu Fintek",
@@ -84,11 +85,12 @@ const ProjectContainer = () => {
       link: "https://internship.ictframe.com/",
     },
     {
-      title: "Nepal Diaries",
+      title: "Meroshare APP",
       description:
-        "I developed a visually appealing website for Nepal Dairies to effectively showcase their product models, enhancing their online presence and fostering better customer engagement. This project was successfully accomplished during my role at W3 Developers.",
-      image: aayishi,
-      modalImage: ho,
+        "Redesigned the meroshare. Improve the users experence by enhancing UI and adding all necessary features to homepage.",
+      image: meroshare,
+      modalImage: meroshare,
+      link: "https://www.behance.net/gallery/223873273/Finance-App-UX-Improvement-Meroshare",
     },
   ];
 
