@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import DIGI from "../assets/DIGI.png";
 import Bca from "../assets/Bca.jpg";
-
+import image from "../assets/image.png";
 import gangstar from "../assets/gangstar.png";
 import logoc from "../assets/logoc.png";
 import logoc1 from "../assets/LOGOS.png";
@@ -25,31 +25,43 @@ const Modal = ({ project, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-auto">
+      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] flex flex-col">
+        {/* Close Button */}
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
           onClick={onClose}
         >
           &#10005;
         </button>
-        {/* Use modalImage if available; otherwise, fallback to image */}
-        <div className="overflow-auto mb-4 rounded-md">
-          <img
-            src={project.modalImage || project.image}
-            alt={project.title}
-            className="w-full object-contain"
-          />
-        </div>
-        <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-        <p className="text-gray-700 mb-4">{project.description}</p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-purple-600 hover:underline cursor-pointer"
+
+        {/* Scrollable Content */}
+        <div
+          className="overflow-auto mb-4 pr-2"
+          style={{ maxHeight: "calc(90vh - 100px)" }}
         >
-          Visit
-        </a>
+          <div className="mb-4 rounded-md">
+            <img
+              src={project.modalImage || project.image}
+              alt={project.title}
+              className="w-full object-contain rounded-md"
+            />
+          </div>
+          <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+          <p className="text-gray-700">{project.description}</p>
+        </div>
+
+        {/* Always-visible Visit Button */}
+        <div className="pt-4 border-t border-gray-200">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View More
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -63,15 +75,15 @@ const GraphicsProject = () => {
         "I have designed impactful logos for companies like Shabda Sanchar, Everest Flying Academy, Lamichhane Automobiles, and Greenify, reflecting their unique identities and values. Each design combines creativity and precision to deliver a lasting impression.",
       image: logoc,
       modalImage: logoc1,
-      link: "https://www.figma.com/design/KcZDVz9OZTY6ejpQ10xwlU/Untitled?node-id=0-1&p=f&t=WRGKNrQelHh4sBf6-0",
+      link: "https://www.behance.net/gallery/223833371/Nepali-Brand-Logos",
     },
     {
       title: "Socail Media posts",
       description:
         "Turning visions into creative realities! ✨ With a passion for design, I craft unique and impactful logos that capture the essence of every brand. From modern and minimalistic to bold and dynamic, each logo tells a story and creates a lasting impression. Let's bring your brand to life! ",
       image: DIGI,
-      modalImage: socail,
-      link: "https://www.figma.com/design/KcZDVz9OZTY6ejpQ10xwlU/Untitled?node-id=0-1&p=f&t=WRGKNrQelHh4sBf6-0",
+      modalImage: image,
+      link: "https://www.behance.net/gallery/223860145/Creative-Social-Media-Post-Designs-for-Brand",
     },
     {
       title: "Illustrations / Posters",

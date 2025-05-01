@@ -17,16 +17,18 @@ const Hero = () => {
       <div className="md:w-1/6" />
       <div className="flex-1">
         <div
-          className="hero-image m-2 md:m-0 sm:h-20vh"
+          className="hero-image m-2 md:m-0 w-full relative"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "40vh", // Default height
           }}
         >
-          <Navbar />
+          <div className="aspect-[16/9] md:aspect-[21/9] lg:aspect-[32/9] w-full min-h-[200px]">
+            <Navbar />
+          </div>
         </div>
+
         <div className="p-4 md:p-8">
           <ProjectContainer />
           <GraphicsProject />

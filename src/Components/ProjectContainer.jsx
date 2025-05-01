@@ -26,34 +26,43 @@ const Modal = ({ project, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       onClick={onClose}
     >
-      <div
-        className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-auto"
-        onClick={(e) => e.stopPropagation()} // Prevent background click closing the modal
-      >
+      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative max-h-[90vh] flex flex-col">
+        {/* Close Button */}
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
           onClick={onClose}
         >
           &#10005;
         </button>
-        <div className="overflow-auto mb-4 rounded-md">
-          <img
-            src={project.modalImage || project.image}
-            alt={project.title}
-            className="w-full object-contain"
-          />
-        </div>
-        <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-        <p className="text-gray-700 mb-4">{project.description}</p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out"
-          onClick={(e) => e.stopPropagation()}
+
+        {/* Scrollable Content */}
+        <div
+          className="overflow-auto mb-4 pr-2"
+          style={{ maxHeight: "calc(90vh - 100px)" }}
         >
-          Visit Project
-        </a>
+          <div className="mb-4 rounded-md">
+            <img
+              src={project.modalImage || project.image}
+              alt={project.title}
+              className="w-full object-contain rounded-md"
+            />
+          </div>
+          <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+          <p className="text-gray-700">{project.description}</p>
+        </div>
+
+        {/* Always-visible Visit Button */}
+        <div className="pt-4 border-t border-gray-200">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View More
+          </a>
+        </div>
       </div>
     </div>
   );
