@@ -10,6 +10,8 @@ import bgg from "../assets/bgg.png";
 import job from "../assets/job.png";
 import ho from "../assets/ho.png";
 import meroshare from "../assets/meroshare.png";
+import Home from "../assets/Home.png";
+import lsp from "../assets/lsp.png";
 
 const Modal = ({ project, onClose }) => {
   if (!project) return null;
@@ -86,12 +88,12 @@ const ProjectContainer = () => {
       link: "https://www.kathmandufintek.com.np",
     },
     {
-      title: "Internship ICT FRAME",
+      title: "Freelance Platform",
       description:
-        "I designed a user-friendly internship portal for ICT Frame, aimed at connecting students with valuable internship opportunities in the tech industry. My responsibilities included creating an intuitive user interface and optimizing user journeys for a seamless experience. This project was accomplished during my tenure at W3 Developers.",
-      image: intern,
-      modalImage: job,
-      link: "https://internship.ictframe.com/",
+        "I designed a user-centric freelance platform, 'LSP,' for connecting clients with professional photographers. My responsibilities included creating an intuitive user interface and optimizing the booking and project management workflows for a seamless experience. This project was accomplished during my tenure at W3 Developers",
+      image: Home,
+      modalImage: lsp,
+      link: "https://www.figma.com/design/92kt7BkoSLGNyxuKh86Nyp/LSP?t=vSim6AoUeHAA3MuW-0",
     },
     {
       title: "Meroshare APP",
