@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="p-4 sm:p-6 md:p-8 lg:p-10 w-full">
+        <div className="p-4 ml-64 sm:p-6 md:p-8 lg:p-10 w-full">
           <ProjectContainer />
           <GraphicsProject />
           <SkillContainer />
