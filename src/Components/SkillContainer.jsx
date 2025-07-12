@@ -28,7 +28,7 @@ const SkillContainer = ({ skills }) => {
           My Bag of Skills
         </h2>
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 m-2 sm:m-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 m-2 sm:m-4 w-full"
           style={{ backgroundColor: "#0b0b0b" }}
         >
           {skillsToRender.map((skill, index) => (

@@ -9,7 +9,7 @@ const Hire = () => {
 
   return (
     <div
-      className="min-h-[30vh] sm:min-h-[40vh] py-8 sm:py-16 flex items-center justify-center relative mx-1 sm:mx-0 rounded-lg sm:rounded-none"
+      className="min-h-[30vh] sm:min-h-[40vh] py-8 sm:py-16 flex items-center justify-center relative mx-1 sm:mx-0 rounded-lg sm:rounded-none w-full"
       style={sectionStyle}
     >
       <div className="text-white text-center px-2 sm:px-4 z-10">

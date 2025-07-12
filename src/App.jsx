@@ -66,7 +66,7 @@ const App = () => {
       />
       
       {/* Main content - 75% width on desktop, full width on mobile */}
-      <div className={`${isMobile ? 'w-full' : 'w-3/4 ml-1/4'} min-h-screen`}>
+      <div className={`${isMobile ? 'w-full' : 'w-3/4'} ${isMobile ? '' : 'ml-1/4'} min-h-screen`}>
         {isMobile && (
           <button
             className="text-white fixed top-4 right-4 z-40 p-3 bg-purple-800 rounded-full hover:bg-purple-600 transition-colors shadow-lg"

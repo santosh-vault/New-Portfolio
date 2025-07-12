@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <animated.nav
       style={{ ...fadeIn, boxShadow: '0 0 10px rgba(128, 0, 128, 0.8)' }}
-      className="bg-purple-800 fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md p-2 transition-all duration-300 hover:bg-purple-600 overflow-hidden rounded-lg z-20" 
+      className="bg-purple-800 fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-lg p-2 transition-all duration-300 hover:bg-purple-600 overflow-hidden rounded-lg z-20" 
     >
       <div className="flex items-center justify-between px-4">
         <Link to="/">

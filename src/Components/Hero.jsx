@@ -11,12 +11,12 @@ import GraphicsProject from "./GraphicsProject";
 const Hero = () => {
   return (
     <section
-      className="flex flex-col sliding-animation min-h-screen w-full"
+      className="flex flex-col sliding-animation min-h-screen w-full max-w-none"
       style={{ backgroundColor: "#0b0b0b", minHeight: "100vh" }}
     >
       <div className="flex-1">
         <div
-          className="hero-image w-full relative"
+          className="hero-image w-full relative max-w-none"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: "cover",
@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-10 w-full max-w-none">
           <ProjectContainer />
           <GraphicsProject />
           <SkillContainer />
