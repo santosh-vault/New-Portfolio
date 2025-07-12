@@ -46,22 +46,30 @@ const App = () => {
   }
 
   return (
-    <div className="relative flex">
-      <div
-        className={`fixed inset-0 bg-black opacity-50 z-30 ${
-          isSidebarOpen && isMobile ? "block" : "hidden"
-        }`}
-        onClick={() => setSidebarOpen(false)}
-      ></div>
+    <div className="relative flex min-h-screen">
+      {/* Mobile overlay */}
+      {isMobile && (
+        <div
+          className={`fixed inset-0 bg-black opacity-50 z-30 ${
+            isSidebarOpen ? "block" : "hidden"
+          }`}
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
+      
+      {/* Sidebar - 25% width on desktop, full width overlay on mobile */}
       <Sidebar
         socialLinks={socialLinks}
         isOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
+        isMobile={isMobile}
       />
-      <div className="flex-1">
+      
+      {/* Main content - 75% width on desktop, full width on mobile */}
+      <div className={`${isMobile ? 'w-full' : 'w-3/4 ml-1/4'} min-h-screen`}>
         {isMobile && (
           <button
-            className="md:hidden text-white fixed top-14 right-4 z-40 p-2 bg-purple-800 rounded-full hover:bg-purple-600 transition-colors"
+            className="text-white fixed top-4 right-4 z-40 p-3 bg-purple-800 rounded-full hover:bg-purple-600 transition-colors shadow-lg"
             onClick={toggleSidebar}
           >
             <CiMenuBurger />
