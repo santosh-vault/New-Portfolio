@@ -80,30 +80,5 @@ const Sidebar = ({ socialLinks, isOpen, toggleSidebar, isMobile }) => {
     </aside>
   );
 };
-            <span
-              className="bg-purple-600 h-2 w-2 md:h-3 md:w-3 inline-block mr-1 md:mr-2"
-              style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
-            ></span>
-            <span
-              className="bg-purple-600 h-2 w-2 md:h-3 md:w-3 inline-block mr-1 md:mr-2"
-              style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
-            ></span>
-            Contact
-          </h2>
-        </div>
-        <p className="text-gray-300 mb-1 text-sm md:text-base">
-          Email me at{" "}
-          <a href="mailto:santoshsub.33@gmail.com" className="text-purple-500 break-all">
-            santoshsub.33@gmail.com
-          </a>
-        </p>
-        <p className="text-gray-300 text-sm md:text-base">
-          Bharatpur, 44200 <br />
-          Nepal
-        </p>
-      </div>
-    </aside>
-  );
-};
 
 export default Sidebar;
