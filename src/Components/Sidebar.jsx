@@ -9,7 +9,7 @@ const Sidebar = ({ socialLinks, isOpen, toggleSidebar, isMobile }) => {
           ? `fixed inset-y-0 left-0 w-80 max-w-[90vw] p-6 transform transition-transform duration-300 ${
               isOpen ? 'translate-x-0' : '-translate-x-full'
             }`
-          : 'fixed left-0 top-0 w-1/4 h-full p-6'
+          : 'fixed left-0 top-0 w-1/4 h-screen p-6'
       } ${
         isMobile && isOpen
           ? "translate-x-0"

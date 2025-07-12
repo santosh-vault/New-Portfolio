@@ -57,7 +57,7 @@ const App = () => {
         ></div>
       )}
       
-      {/* Sidebar - 25% width on desktop, full width overlay on mobile */}
+      {/* Sidebar - Fixed 25% width on desktop, overlay on mobile */}
       <Sidebar
         socialLinks={socialLinks}
         isOpen={isSidebarOpen}
@@ -65,8 +65,8 @@ const App = () => {
         isMobile={isMobile}
       />
       
-      {/* Main content - 75% width on desktop, full width on mobile */}
-      <div className={`${isMobile ? 'w-full' : 'w-3/4'} ${isMobile ? '' : 'ml-1/4'} min-h-screen`}>
+      {/* Main content - Positioned to the right of sidebar */}
+      <div className={`${isMobile ? 'w-full' : 'w-3/4 ml-1/4'} min-h-screen`}>
         {isMobile && (
           <button
             className="text-white fixed top-4 right-4 z-40 p-3 bg-purple-800 rounded-full hover:bg-purple-600 transition-colors shadow-lg"
