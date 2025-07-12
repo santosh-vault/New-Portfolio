@@ -11,7 +11,7 @@ const socialLinks = [
   { link: "https://github.com/santosh-vault", a: "GitHub" },
   { link: "https://twitter.com/subediwrites", a: "Twitter" },
   { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
-  { link: "https://santoshnart.netlify.app/", a: "Portfolio" },
+
 ];
 
 const App = () => {
