@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./Components/Sidebar";
 import Hero from "./Components/Hero";
+import LoadingScreen from "./Components/LoadingScreen";
 import "./App.css";
 import { CiMenuBurger } from "react-icons/ci";
 
@@ -17,6 +18,7 @@ const socialLinks = [
 const App = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,11 +37,19 @@ const App = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <div className="relative flex">
       <div
-        className={`fixed inset-0 bg-black opacity-10 ${
-          isSidebarOpen || !isMobile ? "block" : "hidden"
+        className={`fixed inset-0 bg-black opacity-50 z-30 ${
+          isSidebarOpen && isMobile ? "block" : "hidden"
         }`}
         onClick={() => setSidebarOpen(false)}
       ></div>
@@ -51,7 +61,7 @@ const App = () => {
       <div className="flex-1">
         {isMobile && (
           <button
-            className="md:hidden text-white fixed top-14 right-4 z-50 p-2"
+            className="md:hidden text-white fixed top-14 right-4 z-40 p-2 bg-purple-800 rounded-full hover:bg-purple-600 transition-colors"
             onClick={toggleSidebar}
           >
             <CiMenuBurger />

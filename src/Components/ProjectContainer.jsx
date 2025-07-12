@@ -117,17 +117,17 @@ const ProjectContainer = () => {
 
   return (
     <section className="mt-8">
-      <div className="flex items-center justify-between mx-3 mb-4">
-        <h2 className="text-lg text-white font-bold flex items-center">
+      <div className="flex items-center justify-between mx-1 sm:mx-3 mb-4">
+        <h2 className="text-base sm:text-lg text-white font-bold flex items-center">
           <span
-            className="bg-purple-500 h-3 w-3 inline-block mr-2 "
+            className="bg-purple-500 h-2 w-2 sm:h-3 sm:w-3 inline-block mr-1 sm:mr-2"
             style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
           ></span>
           UI/UX Projects
         </h2>
       </div>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-2 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projects.map((project, index) => (
           <div
             key={index}

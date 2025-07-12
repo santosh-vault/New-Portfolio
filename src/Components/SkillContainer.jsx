@@ -20,15 +20,15 @@ const SkillContainer = ({ skills }) => {
   return (
     <>
       <section className="mt-8">
-        <h2 className="text-lg mx-3 text-white font-bold mb-4">
+        <h2 className="text-base sm:text-lg mx-1 sm:mx-3 text-white font-bold mb-4">
           <span
-            className="bg-purple-500  h-3 w-3 inline-block mr-2"
+            className="bg-purple-500 h-2 w-2 sm:h-3 sm:w-3 inline-block mr-1 sm:mr-2"
             style={{ boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)" }}
           ></span>
           My Bag of Skills
         </h2>
         <div
-          className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 m-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 m-2 sm:m-4"
           style={{ backgroundColor: "#0b0b0b" }}
         >
           {skillsToRender.map((skill, index) => (
