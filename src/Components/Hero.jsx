@@ -11,7 +11,7 @@ import GraphicsProject from "./GraphicsProject";
 const Hero = () => {
   return (
     <section
-      className="flex flex-col sliding-animation min-h-screen w-full ml-100"
+      className="flex flex-col sliding-animation min-h-screen w-full ml-72"
       style={{ backgroundColor: "#0b0b0b", minHeight: "100vh" }}
     >
       <div className="flex-1">
