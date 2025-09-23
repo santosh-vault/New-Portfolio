@@ -11,7 +11,6 @@ const socialLinks = [
   { link: "https://github.com/santosh-vault", a: "GitHub" },
   { link: "https://twitter.com/subediwrites", a: "Twitter" },
   { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
-  { link: "https://santoshnart.netlify.app/", a: "Portfolio" },
 ];
 
 const App = () => {
@@ -21,6 +20,10 @@ const App = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
+      // Close sidebar on larger screens
+      if (window.innerWidth > 768) {
+        setSidebarOpen(false);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -36,27 +39,39 @@ const App = () => {
   };
 
   return (
-    <div className="relative flex">
-      <div
-        className={`fixed inset-0 bg-black opacity-10 ${
-          isSidebarOpen || !isMobile ? "block" : "hidden"
-        }`}
-        onClick={() => setSidebarOpen(false)}
-      ></div>
+    <div className="relative flex min-h-screen bg-[#0b0b0b]">
+      {/* Mobile Overlay */}
+      {isMobile && isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
+
+      {/* Sidebar */}
       <Sidebar
         socialLinks={socialLinks}
         isOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
+        isMobile={isMobile}
       />
-      <div className="flex-1">
+
+      {/* Main Content */}
+      <div
+        className={`flex-1 w-full transition-all duration-300 ${
+          !isMobile ? "lg:ml-64" : ""
+        }`}
+      >
+        {/* Mobile Menu Button */}
         {isMobile && (
           <button
-            className="md:hidden text-white fixed top-14 right-4 z-50 p-2"
+            className="fixed top-4 right-4 z-50 p-3 bg-purple-600 rounded-lg text-white shadow-lg hover:bg-purple-700 transition-colors"
             onClick={toggleSidebar}
           >
-            <CiMenuBurger />
+            <CiMenuBurger size={24} />
           </button>
         )}
+
         <Hero />
       </div>
     </div>

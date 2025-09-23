@@ -13,3 +13,65 @@
 .sliding-animation {
   animation: slideIn 1s ease-in-out;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* Desktop layout fixes */
+@media (min-width: 1024px) {
+  /* Ensure main content doesn't overlap with sidebar */
+  .main-content {
+    margin-left: 16rem; /* 256px - sidebar width */
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+button:focus, a:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Hero image container */
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0b0b;
+}
+
+/* Ensure proper z-index stacking */
+.sidebar {
+  z-index: 10;
+}
+
+.main-content {
+  z-index: 1;
+}

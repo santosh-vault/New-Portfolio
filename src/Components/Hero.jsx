@@ -11,25 +11,29 @@ import GraphicsProject from "./GraphicsProject";
 const Hero = () => {
   return (
     <section
-      className="flex flex-col md:flex-row sliding-animation"
-      style={{ backgroundColor: "#0b0b0b", minHeight: "100vh" }}
+      className="flex flex-col sliding-animation min-h-screen"
+      style={{ backgroundColor: "#0b0b0b" }}
     >
-      <div className="md:w-1/6" />
-      <div className="flex-1">
-        <div
-          className="hero-image m-2 md:m-0 w-full relative"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="aspect-[16/9] md:aspect-[21/9] lg:aspect-[32/9] w-full min-h-[200px]">
+      <div className="flex-1 w-full">
+        <div className="md:hidden">
+          <Navbar />
+        </div>
+
+        {/* Hero Image Section */}
+        <div className="hero-image relative w-full mb-2">
+          <img
+            src={heroImage}
+            alt="Hero"
+            className="w-full h-auto object-contain max-h-[300px] md:max-h-[400px] lg:max-h-[500px]"
+          />
+          {/* Navbar overlay only on desktop */}
+          <div className="hidden md:block absolute inset-0">
             <Navbar />
           </div>
         </div>
 
-        <div className="p-4 md:p-8">
+        {/* Content Section */}
+        <div className="px-4 py-2 md:px-8 md:py-2 lg:px-12">
           <ProjectContainer />
           <GraphicsProject />
           <SkillContainer />
