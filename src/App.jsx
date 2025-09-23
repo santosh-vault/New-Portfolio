@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./Components/Sidebar";
 import Hero from "./Components/Hero";
+import LoadingScreen from "./Components/LoadingScreen";
 import "./App.css";
 import { CiMenuBurger } from "react-icons/ci";
 
@@ -11,11 +12,16 @@ const socialLinks = [
   { link: "https://github.com/santosh-vault", a: "GitHub" },
   { link: "https://twitter.com/subediwrites", a: "Twitter" },
   { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 37f68c545358e86ea460dcf8f3ec97522272b92e
 ];
 
 const App = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,6 +43,14 @@ const App = () => {
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
 
   return (
     <div className="relative flex min-h-screen bg-[#0b0b0b]">
