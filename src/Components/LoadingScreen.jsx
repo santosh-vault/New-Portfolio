@@ -5,21 +5,21 @@ const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Progress animation
+    // Faster progress animation for 2-second duration
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(progressInterval);
           return 100;
         }
-        return prev + 2;
+        return prev + 5; // Increased increment for faster progress
       });
-    }, 60);
+    }, 40); // Reduced interval for smoother animation
 
     const timer = setTimeout(() => {
       setIsVisible(false);
       onLoadingComplete();
-    }, 4000);
+    }, 2000); // Reduced to 2 seconds
 
     return () => {
       clearTimeout(timer);
@@ -30,70 +30,58 @@ const LoadingScreen = ({ onLoadingComplete }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-purple-900 overflow-hidden">
-      {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-20">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-950 via-black to-purple-950 overflow-hidden">
+      {/* Animated matrix-style background */}
+      <div className="absolute inset-0 opacity-10">
         <div 
           className="w-full h-full"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(139, 69, 255, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 69, 255, 0.3) 1px, transparent 1px)
+              radial-gradient(circle at 25% 25%, rgba(139, 69, 255, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.2) 0%, transparent 50%),
+              linear-gradient(rgba(139, 69, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px',
-            animation: 'gridMove 20s linear infinite'
+            backgroundSize: '100% 100%, 100% 100%, 30px 30px, 30px 30px',
+            animation: 'matrixFlow 8s linear infinite'
           }}
         />
       </div>
 
-      {/* Floating tech particles */}
+      {/* Floating energy particles */}
       <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(40)].map((_, i) => (
           <div
             key={i}
-            className="absolute animate-pulse"
+            className="absolute"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
+              animationDelay: `${Math.random() * 2}s`,
             }}
           >
             <div 
-              className="w-1 h-1 bg-cyan-400 rounded-full"
+              className={`w-1 h-1 rounded-full ${
+                i % 3 === 0 ? 'bg-purple-400' : i % 3 === 1 ? 'bg-cyan-400' : 'bg-pink-400'
+              }`}
               style={{
-                boxShadow: '0 0 10px rgba(34, 211, 238, 0.8)',
+                boxShadow: `0 0 ${4 + Math.random() * 8}px currentColor`,
+                animation: `particleFloat ${2 + Math.random() * 2}s ease-in-out infinite`,
               }}
             />
           </div>
         ))}
       </div>
 
-      {/* Circuit board lines */}
+      {/* Dynamic energy waves */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="absolute bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px opacity-60"
+            className="absolute inset-0 rounded-full border border-purple-500/20"
             style={{
-              left: '0',
-              right: '0',
-              top: `${10 + i * 12}%`,
-              animation: `circuitFlow ${3 + i * 0.5}s ease-in-out infinite`,
-              animationDelay: `${i * 0.3}s`,
-            }}
-          />
-        ))}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={`v-${i}`}
-            className="absolute bg-gradient-to-b from-transparent via-cyan-500 to-transparent w-px opacity-60"
-            style={{
-              top: '0',
-              bottom: '0',
-              left: `${15 + i * 15}%`,
-              animation: `circuitFlowVertical ${2.5 + i * 0.4}s ease-in-out infinite`,
-              animationDelay: `${i * 0.4}s`,
+              animation: `energyWave ${1.5 + i * 0.3}s ease-out infinite`,
+              animationDelay: `${i * 0.2}s`,
             }}
           />
         ))}
@@ -101,261 +89,274 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
       {/* Central holographic loader */}
       <div className="relative">
-        {/* Outer hexagonal ring */}
-        <div className="relative w-40 h-40">
+        {/* Outer rotating ring with energy nodes */}
+        <div className="relative w-32 h-32">
           <div 
-            className="absolute inset-0 border-2 border-cyan-400 opacity-80"
+            className="absolute inset-0 rounded-full border-2 border-gradient-to-r from-purple-500 via-cyan-400 to-purple-500"
             style={{
-              clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-              animation: 'hexRotate 4s linear infinite',
-              filter: 'drop-shadow(0 0 20px rgba(34, 211, 238, 0.6))',
+              background: 'conic-gradient(from 0deg, transparent, rgba(139, 69, 255, 0.8), transparent, rgba(34, 211, 238, 0.8), transparent)',
+              borderRadius: '50%',
+              animation: 'holographicSpin 1.5s linear infinite',
+              filter: 'drop-shadow(0 0 20px rgba(139, 69, 255, 0.6))',
             }}
           />
+          
+          {/* Energy nodes */}
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-3 h-3 rounded-full"
+              style={{
+                top: '50%',
+                left: '50%',
+                background: `linear-gradient(45deg, ${
+                  i % 2 === 0 ? '#8b45ff' : '#22d3ee'
+                }, ${i % 2 === 0 ? '#22d3ee' : '#8b45ff'})`,
+                transform: `rotate(${i * 60}deg) translateX(55px) translateY(-6px)`,
+                boxShadow: `0 0 15px ${i % 2 === 0 ? 'rgba(139, 69, 255, 0.8)' : 'rgba(34, 211, 238, 0.8)'}`,
+                animation: `nodeOrbit ${1.5}s linear infinite, nodePulse ${0.8 + i * 0.1}s ease-in-out infinite`,
+              }}
+            />
+          ))}
         </div>
 
-        {/* Middle rotating tech ring */}
-        <div className="absolute inset-4 w-32 h-32">
+        {/* Inner core with quantum effect */}
+        <div className="absolute inset-6 w-20 h-20 flex items-center justify-center">
           <div 
-            className="w-full h-full border-2 border-purple-500 rounded-full opacity-70 relative"
+            className="w-full h-full rounded-full relative overflow-hidden"
             style={{
-              animation: 'techSpin 3s linear infinite reverse',
-              filter: 'drop-shadow(0 0 15px rgba(139, 69, 255, 0.6))',
+              background: 'radial-gradient(circle, rgba(139, 69, 255, 0.9) 0%, rgba(34, 211, 238, 0.9) 50%, rgba(139, 69, 255, 0.9) 100%)',
+              animation: 'quantumPulse 1s ease-in-out infinite',
+              filter: 'drop-shadow(0 0 30px rgba(139, 69, 255, 0.8))',
             }}
           >
-            {/* Tech nodes on the ring */}
+            {/* Quantum data streams */}
             {[...Array(8)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-3 h-3 bg-purple-400 rounded-full"
+                className="absolute bg-white/80 h-px"
                 style={{
-                  top: '50%',
-                  left: '50%',
-                  transform: `rotate(${i * 45}deg) translateX(60px) translateY(-6px)`,
-                  boxShadow: '0 0 10px rgba(139, 69, 255, 0.8)',
-                  animation: `nodePulse ${1 + i * 0.1}s ease-in-out infinite`,
+                  left: '15%',
+                  right: '15%',
+                  top: `${15 + i * 8}%`,
+                  animation: `quantumStream ${1 + i * 0.1}s ease-in-out infinite`,
+                  animationDelay: `${i * 0.05}s`,
                 }}
               />
             ))}
+            
+            {/* Central energy core */}
+            <div 
+              className="absolute inset-2 rounded-full bg-white/20"
+              style={{
+                animation: 'coreGlow 0.8s ease-in-out infinite alternate',
+              }}
+            />
           </div>
         </div>
 
-        {/* Inner core with data streams */}
-        <div className="absolute inset-8 w-24 h-24 flex items-center justify-center">
-          <div 
-            className="w-full h-full bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full relative overflow-hidden"
-            style={{
-              animation: 'corePulse 2s ease-in-out infinite',
-              filter: 'drop-shadow(0 0 25px rgba(34, 211, 238, 0.8))',
-            }}
-          >
-            {/* Data stream lines */}
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute bg-white h-px opacity-80"
-                style={{
-                  left: '10%',
-                  right: '10%',
-                  top: `${20 + i * 10}%`,
-                  animation: `dataStream ${1.5 + i * 0.2}s ease-in-out infinite`,
-                  animationDelay: `${i * 0.1}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Orbiting satellites */}
-        {[...Array(4)].map((_, i) => (
+        {/* Orbiting satellites with trails */}
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-cyan-300 rounded-full"
+            className="absolute"
             style={{
               top: '50%',
               left: '50%',
               transformOrigin: '0 0',
-              transform: `rotate(${i * 90}deg) translateX(100px) translateY(-4px)`,
-              animation: `satelliteOrbit ${6 + i * 0.5}s linear infinite`,
-              boxShadow: '0 0 8px rgba(34, 211, 238, 0.9)',
+              animation: `satelliteOrbit ${1.2 + i * 0.2}s linear infinite`,
             }}
-          />
+          >
+            <div
+              className={`w-2 h-2 rounded-full ${
+                i === 0 ? 'bg-purple-400' : i === 1 ? 'bg-cyan-400' : 'bg-pink-400'
+              }`}
+              style={{
+                transform: `translateX(${80 + i * 15}px) translateY(-4px)`,
+                boxShadow: `0 0 12px currentColor`,
+                filter: `drop-shadow(0 0 8px currentColor)`,
+              }}
+            />
+            {/* Satellite trail */}
+            <div
+              className={`absolute w-8 h-px ${
+                i === 0 ? 'bg-purple-400/50' : i === 1 ? 'bg-cyan-400/50' : 'bg-pink-400/50'
+              }`}
+              style={{
+                transform: `translateX(${72 + i * 15}px) translateY(-4px)`,
+                animation: 'trailFade 0.5s ease-out infinite',
+              }}
+            />
+          </div>
         ))}
       </div>
 
-      {/* Holographic progress bar */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-80">
-        <div className="relative h-1 bg-gray-800 rounded-full overflow-hidden">
+      {/* Sleek progress indicator */}
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-72">
+        <div className="relative h-1 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm">
           <div 
-            className="absolute left-0 top-0 h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full transition-all duration-300 ease-out"
+            className="absolute left-0 top-0 h-full rounded-full transition-all duration-100 ease-out"
             style={{ 
               width: `${progress}%`,
-              boxShadow: '0 0 20px rgba(34, 211, 238, 0.8)',
+              background: 'linear-gradient(90deg, #8b45ff 0%, #22d3ee 50%, #ec4899 100%)',
+              boxShadow: '0 0 20px rgba(139, 69, 255, 0.8), 0 0 40px rgba(34, 211, 238, 0.4)',
             }}
           />
-          {/* Progress glow effect */}
+          {/* Progress shimmer */}
           <div 
-            className="absolute top-0 h-full w-8 bg-gradient-to-r from-transparent via-white to-transparent opacity-60 rounded-full"
+            className="absolute top-0 h-full w-16 opacity-75 rounded-full"
             style={{
-              left: `${Math.max(0, progress - 8)}%`,
-              animation: progress > 0 ? 'progressGlow 1s ease-in-out infinite' : 'none',
+              left: `${Math.max(0, progress - 16)}%`,
+              background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
+              animation: progress > 0 ? 'progressShimmer 0.8s ease-in-out infinite' : 'none',
             }}
           />
         </div>
-        {/* Progress indicators */}
-        <div className="flex justify-between mt-2">
-          {[...Array(5)].map((_, i) => (
+        
+        {/* Progress dots */}
+        <div className="flex justify-between mt-3">
+          {[...Array(4)].map((_, i) => (
             <div
               key={i}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                progress > i * 20 
-                  ? 'bg-cyan-400 shadow-lg' 
-                  : 'bg-gray-600'
+                progress > i * 25 
+                  ? 'bg-gradient-to-r from-purple-400 to-cyan-400 shadow-lg' 
+                  : 'bg-gray-700'
               }`}
               style={{
-                boxShadow: progress > i * 20 ? '0 0 10px rgba(34, 211, 238, 0.8)' : 'none',
+                boxShadow: progress > i * 25 ? '0 0 12px rgba(139, 69, 255, 0.8)' : 'none',
+                animation: progress > i * 25 ? 'dotPulse 1s ease-in-out infinite' : 'none',
               }}
             />
           ))}
         </div>
       </div>
 
-      {/* Corner tech elements */}
-      <div className="absolute top-8 left-8">
-        <div className="relative w-16 h-16">
+      {/* Corner tech elements with enhanced glow */}
+      {[
+        { position: 'top-6 left-6', rotation: '0deg', color: 'purple' },
+        { position: 'top-6 right-6', rotation: '90deg', color: 'cyan' },
+        { position: 'bottom-6 left-6', rotation: '270deg', color: 'cyan' },
+        { position: 'bottom-6 right-6', rotation: '180deg', color: 'purple' },
+      ].map((corner, i) => (
+        <div key={i} className={`absolute ${corner.position}`}>
           <div 
-            className="absolute inset-0 border-l-2 border-t-2 border-cyan-400 opacity-60"
-            style={{ animation: 'cornerGlow 3s ease-in-out infinite' }}
-          />
-          <div 
-            className="absolute top-2 left-2 w-3 h-3 bg-cyan-400 rounded-full"
-            style={{ 
-              animation: 'cornerPulse 2s ease-in-out infinite',
-              boxShadow: '0 0 10px rgba(34, 211, 238, 0.8)',
-            }}
-          />
+            className="relative w-12 h-12"
+            style={{ transform: `rotate(${corner.rotation})` }}
+          >
+            <div 
+              className={`absolute inset-0 border-l-2 border-t-2 ${
+                corner.color === 'purple' ? 'border-purple-400' : 'border-cyan-400'
+              } opacity-80 rounded-tl-lg`}
+              style={{ 
+                animation: `cornerGlow ${1.5 + i * 0.2}s ease-in-out infinite`,
+                filter: `drop-shadow(0 0 8px ${
+                  corner.color === 'purple' ? 'rgba(139, 69, 255, 0.6)' : 'rgba(34, 211, 238, 0.6)'
+                })`,
+              }}
+            />
+            <div 
+              className={`absolute top-1 left-1 w-2 h-2 ${
+                corner.color === 'purple' ? 'bg-purple-400' : 'bg-cyan-400'
+              } rounded-full`}
+              style={{ 
+                animation: `cornerPulse ${1.2 + i * 0.1}s ease-in-out infinite`,
+                boxShadow: `0 0 12px ${
+                  corner.color === 'purple' ? 'rgba(139, 69, 255, 0.8)' : 'rgba(34, 211, 238, 0.8)'
+                }`,
+              }}
+            />
+          </div>
         </div>
-      </div>
+      ))}
 
-      <div className="absolute top-8 right-8">
-        <div className="relative w-16 h-16">
-          <div 
-            className="absolute inset-0 border-r-2 border-t-2 border-purple-400 opacity-60"
-            style={{ animation: 'cornerGlow 3s ease-in-out infinite 0.5s' }}
-          />
-          <div 
-            className="absolute top-2 right-2 w-3 h-3 bg-purple-400 rounded-full"
-            style={{ 
-              animation: 'cornerPulse 2s ease-in-out infinite 0.5s',
-              boxShadow: '0 0 10px rgba(139, 69, 255, 0.8)',
-            }}
-          />
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-8">
-        <div className="relative w-16 h-16">
-          <div 
-            className="absolute inset-0 border-l-2 border-b-2 border-cyan-400 opacity-60"
-            style={{ animation: 'cornerGlow 3s ease-in-out infinite 1s' }}
-          />
-          <div 
-            className="absolute bottom-2 left-2 w-3 h-3 bg-cyan-400 rounded-full"
-            style={{ 
-              animation: 'cornerPulse 2s ease-in-out infinite 1s',
-              boxShadow: '0 0 10px rgba(34, 211, 238, 0.8)',
-            }}
-          />
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 right-8">
-        <div className="relative w-16 h-16">
-          <div 
-            className="absolute inset-0 border-r-2 border-b-2 border-purple-400 opacity-60"
-            style={{ animation: 'cornerGlow 3s ease-in-out infinite 1.5s' }}
-          />
-          <div 
-            className="absolute bottom-2 right-2 w-3 h-3 bg-purple-400 rounded-full"
-            style={{ 
-              animation: 'cornerPulse 2s ease-in-out infinite 1.5s',
-              boxShadow: '0 0 10px rgba(139, 69, 255, 0.8)',
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Scanning lines */}
+      {/* Scanning beam effect */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(34, 211, 238, 0.1) 50%, transparent 100%)',
-          animation: 'scanLine 4s ease-in-out infinite',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(139, 69, 255, 0.1) 45%, rgba(255, 255, 255, 0.2) 50%, rgba(34, 211, 238, 0.1) 55%, transparent 100%)',
+          animation: 'scanBeam 2s ease-in-out infinite',
         }}
       />
 
       <style jsx>{`
-        @keyframes gridMove {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(50px, 50px); }
+        @keyframes matrixFlow {
+          0% { transform: translate(0, 0) rotate(0deg); }
+          100% { transform: translate(30px, 30px) rotate(360deg); }
         }
         
-        @keyframes circuitFlow {
-          0%, 100% { opacity: 0.3; transform: scaleX(0); }
-          50% { opacity: 1; transform: scaleX(1); }
+        @keyframes particleFloat {
+          0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+          50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
         }
         
-        @keyframes circuitFlowVertical {
-          0%, 100% { opacity: 0.3; transform: scaleY(0); }
-          50% { opacity: 1; transform: scaleY(1); }
+        @keyframes energyWave {
+          0% { transform: scale(0); opacity: 1; }
+          100% { transform: scale(2); opacity: 0; }
         }
         
-        @keyframes hexRotate {
+        @keyframes holographicSpin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
         
-        @keyframes techSpin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        @keyframes nodeOrbit {
+          0% { transform: rotate(0deg) translateX(55px) translateY(-6px); }
+          100% { transform: rotate(360deg) translateX(55px) translateY(-6px); }
         }
         
         @keyframes nodePulse {
-          0%, 100% { opacity: 0.6; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.2); }
+          0%, 100% { opacity: 0.8; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.3); }
         }
         
-        @keyframes corePulse {
-          0%, 100% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.1); opacity: 1; }
+        @keyframes quantumPulse {
+          0%, 100% { transform: scale(1); opacity: 0.9; }
+          50% { transform: scale(1.05); opacity: 1; }
         }
         
-        @keyframes dataStream {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
+        @keyframes quantumStream {
+          0% { transform: translateX(-100%) scaleX(0); opacity: 0; }
+          50% { opacity: 1; transform: scaleX(1); }
+          100% { transform: translateX(100%) scaleX(0); opacity: 0; }
+        }
+        
+        @keyframes coreGlow {
+          0% { opacity: 0.3; transform: scale(1); }
+          100% { opacity: 0.8; transform: scale(1.1); }
         }
         
         @keyframes satelliteOrbit {
-          0% { transform: rotate(0deg) translateX(100px) translateY(-4px); }
-          100% { transform: rotate(360deg) translateX(100px) translateY(-4px); }
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
         
-        @keyframes progressGlow {
-          0%, 100% { opacity: 0.6; }
+        @keyframes trailFade {
+          0% { opacity: 0.8; transform: scaleX(1); }
+          100% { opacity: 0; transform: scaleX(0.3); }
+        }
+        
+        @keyframes progressShimmer {
+          0%, 100% { opacity: 0.5; }
           50% { opacity: 1; }
         }
         
+        @keyframes dotPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+        }
+        
         @keyframes cornerGlow {
-          0%, 100% { opacity: 0.4; }
+          0%, 100% { opacity: 0.6; }
           50% { opacity: 1; }
         }
         
         @keyframes cornerPulse {
           0%, 100% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.3); opacity: 1; }
+          50% { transform: scale(1.4); opacity: 1; }
         }
         
-        @keyframes scanLine {
+        @keyframes scanBeam {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
