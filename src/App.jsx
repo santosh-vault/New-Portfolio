@@ -12,10 +12,6 @@ const socialLinks = [
   { link: "https://github.com/santosh-vault", a: "GitHub" },
   { link: "https://twitter.com/subediwrites", a: "Twitter" },
   { link: "https://www.instagram.com/santoshsub_75/", a: "Instagram" },
-<<<<<<< HEAD
-=======
-
->>>>>>> 37f68c545358e86ea460dcf8f3ec97522272b92e
 ];
 
 const App = () => {
