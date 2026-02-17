@@ -28,7 +28,7 @@ const Modal = ({ project, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
       onClick={onClose}
     >
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-lg mx-auto relative max-h-[90vh] flex flex-col">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-lg mx-auto relative max-h-[90vh] flex flex-col p-6">
         {/* Close Button */}
         <button
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 z-10 bg-white rounded-full p-1 shadow-md"
