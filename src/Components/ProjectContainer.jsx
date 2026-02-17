@@ -77,20 +77,20 @@ const Modal = ({ project, onClose }) => {
 const ProjectContainer = () => {
   const projects = [
     {
-      title: "CRM",
+      title: "AutoFix Nepal",
       description:
-        " As a UI/UX designer at W3 Developers, I contributed to developing a CRM solution tailored for educational consultancies. My responsibilities included designing user-friendly interfaces, creating dashboards for performance tracking, and ensuring an intuitive user experience aligned with client requirements.",
+        "I designed the website for AutoFix Nepal, the official platform for mechanics, technicians, and automotive businesses in Nepal. The design focuses on connecting workshops with professional training, certification programs, and business support services. My work included creating an intuitive interface for members to access industry resources, networking opportunities, and exclusive partnership benefits.",
       image: crma,
       modalImage: Dashboard,
-      link: "https://www.behance.net/gallery/223908225/CRM-Dashboard-for-Education-Consultancy",
+      link: "https://www.autofixnepal.com/",
     },
     {
-      title: "Kathmandu Fintek",
+      title: "Technest Innovations",
       description:
-        "I developed a comprehensive fintech event management platform for Kathmandu FinTech, focusing on enhancing the organization and execution of industry events. My role involved conducting user research, wireframing, and designing interactive dashboards to streamline event processes and improve user engagement. This project was completed as part of my role at W3 Developers.",
+        "I created a modern and professional website for Technest Innovations, a technology solutions company. The design emphasizes clean aesthetics and user-friendly navigation to showcase their services and expertise. My focus was on building a digital presence that effectively communicates their innovative approach and strengthens their brand identity in the tech industry.",
       image: bgg,
       modalImage: fintek,
-      link: "https://www.kathmandufintek.com.np",
+      link: "https://technestinnovations.com.np/",
     },
     {
       title: "TaskFlo Landing Page",
