@@ -77,20 +77,20 @@ const Modal = ({ project, onClose }) => {
 const ProjectContainer = () => {
   const projects = [
     {
-      title: "AutoFix Nepal",
+      title: "PRIME",
       description:
-        "I designed the website for AutoFix Nepal, the official platform for mechanics, technicians, and automotive businesses in Nepal. The design focuses on connecting workshops with professional training, certification programs, and business support services. My work included creating an intuitive interface for members to access industry resources, networking opportunities, and exclusive partnership benefits.",
+        "PRIME is a comprehensive Management & Accounting platform designed to streamline financial operations. This project showcases a premium digital vault experience with elegant UI/UX design, featuring secure login flows, intuitive navigation, and a sophisticated interface that conveys trust and professionalism. The design emphasizes security, accessibility, and user experience for business accounting and management tasks.",
       image: crma,
       modalImage: Dashboard,
-      link: "https://www.autofixnepal.com/",
+      link: "https://www.figma.com/design/l70rvOTz2uzr7p969ZcZgk/PRIME?t=KJA6ePj1y6ZrhY0w-0",
     },
     {
-      title: "Technest Innovations",
+      title: "TechNest Innovation",
       description:
-        "I created a modern and professional website for Technest Innovations, a technology solutions company. The design emphasizes clean aesthetics and user-friendly navigation to showcase their services and expertise. My focus was on building a digital presence that effectively communicates their innovative approach and strengthens their brand identity in the tech industry.",
+        "TechNest Innovation is a cutting-edge design system and portfolio project that showcases modern UI/UX principles. The design emphasizes innovative technology solutions with a focus on user-centric design, clean aesthetics, and seamless interactions. This project demonstrates how thoughtful design can transform complex technical concepts into intuitive, engaging digital experiences.",
       image: bgg,
       modalImage: fintek,
-      link: "https://technestinnovations.com.np/",
+      link: "https://www.figma.com/design/FzIsm8su4tvMrN8yQudTDL/TechNest?node-id=0-1&p=f&t=KJA6ePj1y6ZrhY0w-0",
     },
     {
       title: "TaskFlo Landing Page",
