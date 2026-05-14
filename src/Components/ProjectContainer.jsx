@@ -5,8 +5,8 @@ import ProjectCard from "./ProjectCard";
 import crma from "../assets/crma.png";
 import intern from "../assets/intern.png";
 import Dashboard from "../assets/Dashboard.png";
+import prime from "../assets/prime.png";
 import PM from "../assets/PM.png";
-import crma from "../assets/crma.png";
 import job from "../assets/job.png";
 import ho from "../assets/ho.png";
 import meroshare from "../assets/meroshare.png";
@@ -80,16 +80,16 @@ const ProjectContainer = () => {
       title: "PRIME",
       description:
         "PRIME is a comprehensive Management & Accounting platform designed to streamline financial operations. This project showcases a premium digital vault experience with elegant UI/UX design, featuring secure login flows, intuitive navigation, and a sophisticated interface that conveys trust and professionalism. The design emphasizes security, accessibility, and user experience for business accounting and management tasks.",
-      image: PM,
-      modalImage: PM,
+      image: prime,
+      modalImage: prime,
       link: "https://www.figma.com/design/l70rvOTz2uzr7p969ZcZgk/PRIME?t=KJA6ePj1y6ZrhY0w-0",
     },
     {
       title: "TechNest Innovation",
       description:
         "TechNest Innovation is a cutting-edge design system and portfolio project that showcases modern UI/UX principles. The design emphasizes innovative technology solutions with a focus on user-centric design, clean aesthetics, and seamless interactions. This project demonstrates how thoughtful design can transform complex technical concepts into intuitive, engaging digital experiences.",
-      image: crma,
-      modalImage: crma,
+      image: PM,
+      modalImage: PM,
       link: "https://www.figma.com/design/FzIsm8su4tvMrN8yQudTDL/TechNest?node-id=0-1&p=f&t=KJA6ePj1y6ZrhY0w-0",
     },
     {
